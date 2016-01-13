@@ -3,6 +3,10 @@ var util = require('util')
 var dullstring = require('dullstring')
 var isString = require('is-string')
 
+var header = dullstring('h:level. :text\n')
+var anchor = dullstring('{anchor::name}\n')
+var link = dullstring('[:text|#:target]')
+
 module.exports = ConfluenceWriter
 
 function escapeCurly (s) {
@@ -22,16 +26,16 @@ function maybeFormat (s) {
 function format (chunk) {
   switch (chunk.type) {
     case 'header':
-      return dullstring('h:level. :text\n')({
+      return header({
         level: chunk.level,
         text: escapeCurly(chunk.text)
       })
     case 'anchor':
-      return dullstring('{anchor::name}\n')({
+      return anchor({
         name: chunk.name.replace(/[{}]/g, '')
       })
     case 'link':
-      return dullstring('[:text|#:target]')({
+      return link({
         text: escapeCurly(chunk.text),
         target: chunk.target.replace(/[{}]/g, '')
       })
