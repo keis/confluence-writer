@@ -1,0 +1,36 @@
+{
+  "name": "confluence-writer",
+  "version": "0.0.0",
+  "description": "test",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "standard && tape test/unit/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keis/confluence-writer.git"
+  },
+  "keywords": [
+    "confluence",
+    "markup"
+  ],
+  "author": "David Keijser <keijser@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keis/confluence-writer/issues"
+  },
+  "homepage": "https://github.com/keis/confluence-writer#readme",
+  "dependencies": {
+    "dullstring": "^1.0.1",
+    "is-string": "^1.0.4",
+    "readable-stream": "^2.0.5"
+  },
+  "devDependencies": {
+    "standard": "^5.4.1",
+    "stream-content": "^0.1.2",
+    "tape": "^4.4.0"
+  }
+}
